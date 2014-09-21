@@ -23,7 +23,7 @@
 # SOFTWARE.
 
 
-from future import division, print_function  # For Python 2 compatibility
+from __future__ import division, print_function  # For Python 2 compatibility
 import numpy as np
 import cmath
 
