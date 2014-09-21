@@ -1,4 +1,4 @@
-# A toy Polynomial class and related methods
+# A toy (and hopefully efficient) Polynomial class and related methods
 # 
 # The MIT License (MIT)
 # 
@@ -46,14 +46,14 @@ class Polynomial(object):
         """-> numpy.Array of the roots"""
         if self.order == 0:
             if self.coeffs[0] != 0:
-                raise ZeroDivisionError("Wut, 5 == 0 ?")
+                raise ZeroDivisionError("Wut, %f == 0 ?" % self.coeffs[0])
             else:
-                return complex
+                return float('inf')
         elif self.order == 1:
-            a, b = self.coeffs
+            b, a = self.coeffs
             return -float(b) / a
         elif self.order == 2:
-            a, b, c = self.coeffs
+            c, b, a = self.coeffs
             dis = b * b - 4 * a * c
             if dis >= 0:
                 disqrt = math.sqrt(dis)
